@@ -1,0 +1,100 @@
+$lavender: #cdb4db;
+$light-pink: #ffc8dd;
+$med-pink: #ffafcc;
+$dark-pink: #d3628b;
+$baby-blue: #bde0fe;
+$blue: #a2d2ff;
+$grey: #444444;
+
+html,
+body {
+  height: 100%;
+  color: $grey;
+}
+
+body {
+  background-color: $lavender;
+  background-attachment: fixed;
+  background: url("sky.svg") no-repeat;
+  background-size: cover;
+  background-position: 0 28%;
+  font-family: ofelia-display, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+h1 {
+  font-family: lores-9-plus-narrow, sans-serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  margin: 3rem 0 0 0;
+  color: #fff;
+}
+
+h2 {
+  font-weight: 300;
+  letter-spacing: 5px;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 3rem 0;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 15px;
+  justify-content: center;
+  align-content: center;
+}
+
+.cell {
+  display: flex;
+  width: 220px;
+  height: 220px;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  img {
+    width: 100px;
+    height: 100px;
+    filter: invert(100%);
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+
+  a {
+    color: $lavender;
+    letter-spacing: 1.5px;
+  }
+
+  p {
+    color: $lavender;
+    letter-spacing: 1.5px;
+    margin: .5rem 0;
+  }
+}
