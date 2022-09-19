@@ -45,31 +45,6 @@ h2 {
   align-items: center;
 }
 
-.board {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 15px;
-  justify-content: center;
-  align-content: center;
-}
-
-.cell {
-  display: flex;
-  width: 220px;
-  height: 220px;
-  border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-.cell img {
-  width: 100px;
-  height: 100px;
-  filter: invert(100%);
-}
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -86,6 +61,42 @@ h2 {
   color: #cdb4db;
   letter-spacing: 1.5px;
   margin: 0.5rem 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 15px;
+}
+
+.cell {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  transition: 200ms ease-in-out;
+}
+.cell:hover {
+  backdrop-filter: blur(5px) saturate(150%);
+}
+.cell img {
+  width: 100px;
+  height: 100px;
+  filter: invert(100%);
+}
+
+.winning-message {
+  display: none;
+}
+
+.losing-message {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
