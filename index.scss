@@ -1,6 +1,7 @@
 // ---------------------- GLOBAL ---------------------- //
 
 $lavender: #cdb4db;
+$lavender-op-med: rgba(207, 156, 236, 0.561);
 $light-pink: #ffc8dd;
 $med-pink: #ffafcc;
 $dark-pink: #d3628b;
@@ -34,7 +35,7 @@ h1 {
   font-family: lores-9-plus-narrow, sans-serif;
   font-weight: 700;
   font-size: 3.2rem;
-  margin: 3rem 0 0 0;
+  margin: 2rem 0 0 0;
   color: #fff;
 }
 
@@ -49,7 +50,7 @@ h2 {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   height: 100%;
 }
@@ -104,7 +105,6 @@ h2 {
     }
 
     img {
-      filter: invert(100%);
       width: 20px;
       height: 20px;
     }
@@ -114,15 +114,22 @@ h2 {
     button {
       display: flex;
       justify-content: center;
+      align-items: center;
       background-color: $white-op-med;
-      color: #fff;
       padding: 1rem;
       border-radius: 1rem;
+      color: #fff;
+      font-family: lores-12, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 3px;
+      font-size: 1.3rem;
+      text-transform: uppercase;
       height: 50px;
-      width: 100px;
+      width: 120px;
 
       &:hover {
-        background-color: $white-op-low;
+        background-color: $lavender-op-med;
       }
     }
   }
@@ -169,21 +176,103 @@ h2 {
 
   &:hover {
     backdrop-filter: blur(5px) saturate(150%);
-  }
-
-  img {
-    width: 100px;
-    height: 100px;
-    filter: invert(100%);
+    border: 3px solid $white-op-med;
   }
 }
 
-// ---------------------- HIDDEN STUFF ---------------------- //
+// ---------------------- HIDDEN/HOVER STUFF ---------------------- //
 
 .winning-message {
-  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  z-index: 999;
+
+  width: 50vw;
+  height: 30vh;
+  background-color: $lavender-op-med;
+  border-radius: 1rem;
+  border: 1px solid $white-op-med;
+  
+
+  span {
+    font-family: lores-9-plus-narrow, sans-serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    margin: 2rem 0 1rem 0;
+    color: #fff;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white-op-med;
+    padding: 1rem;
+    border: 1px solid #fff;
+    border-radius: 1rem;
+    color: #fff;
+    font-family: lores-12, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 3px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    height: 50px;
+    width: 220px;
+
+    &:hover {
+      background-color: $lavender-op-med;
+    }
+  }
 }
+
+.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: 200ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 998;
+}
+
+
 
 .losing-message {
   display: none;
+}
+
+.star,
+.moon {
+  cursor: not-allowed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100px;
+}
+
+.star {
+  background-image: url("star.png");
+}
+
+.moon {
+  background-image: url("moon.png");
 }

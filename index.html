@@ -13,54 +13,61 @@
     <div class="container">
       <header class="header">
         <div class="title">
-            <h1>Tic-Tac-Toe</h1>
-            <h2>moon & stars edition</h2>
-            <hr>
+          <h1>Tic-Tac-Toe</h1>
+          <h2>moon & stars edition</h2>
+          <hr />
         </div>
 
         <div class="player-buttons">
-            <div class="player-one">
-              <span>Player One:</span> 
-              
-              <div class="p1-buttons">
-                  <button class="player-moon"><img src="moon.png" alt="moon icon for player one"></button>
-                  <button class="player-star"><img src="star.png" alt="star icon for player one"></button>
-              </div>
+          <div class="player-one">
+            <span>Player One:</span>
 
-            </div>
-
-            <div class="start-button">
-                <button class="play-game">Go!</button>
-              </div>
-
-            <div class="player-two">
-             <span>Player Two:</span>
-              
-              <div class="p2-buttons">
-                  <button class="player-moon"><img src="moon.png" alt="moon icon for player one"></button>
-                  <button class="player-star"><img src="star.png" alt="star icon for player one"></button>
-              </div>
-            
+            <div class="p1-buttons">
+              <button class="player-moon">
+                <img src="moon.png" alt="moon icon for player one" />
+              </button>
+              <button class="player-star">
+                <img src="star.png" alt="star icon for player one" />
+              </button>
             </div>
           </div>
+
+          <div class="start-button">
+            <button class="play-game">Play!</button>
+          </div>
+
+          <div class="player-two">
+            <span>Player Two:</span>
+
+            <div class="p2-buttons">
+              <button class="player-moon">
+                <img src="moon.png" alt="moon icon for player one" />
+              </button>
+              <button class="player-star">
+                <img src="star.png" alt="star icon for player one" />
+              </button>
+            </div>
+          </div>
+        </div>
       </header>
 
-     
-
-      <div class="board">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+      <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
       </div>
 
-      <div class="winning-message" id="winningMessage"></div>
-      <div class="losing-message" id="losingMessage"></div>
+      <div class="winning-message">
+        <span class="winning-message-text"></span>
+        <button class="restart">Play Again?</button>
+      </div>
+      <div class="overlay"></div>
 
       <footer class="footer">
         <p>
