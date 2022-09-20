@@ -13,6 +13,7 @@ body {
   font-family: ofelia-display, sans-serif;
   font-weight: 300;
   font-style: normal;
+  letter-spacing: 1.5px;
 }
 
 h1 {
@@ -27,14 +28,14 @@ h2 {
   font-weight: 300;
   letter-spacing: 5px;
   font-size: 1.1rem;
-  margin: 0.5rem 0 3rem 0;
+  margin: 0.5rem 0 0 0;
   color: #fff;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100%;
 }
@@ -42,23 +43,74 @@ h2 {
 .header {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+}
+.title hr {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+.player-buttons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 2;
+  text-align: center;
+}
+.player-buttons button {
+  padding: 0.5rem 1rem 0.3rem 1rem;
+  margin: 0 0.5rem;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 0.5rem;
+  transition: 300ms ease;
+}
+.player-buttons button:hover {
+  background-color: #cdb4db;
+}
+.player-buttons button img {
+  filter: invert(100%);
+  width: 20px;
+  height: 20px;
+}
+.player-buttons .start-button button {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  height: 50px;
+  width: 100px;
+}
+.player-buttons .start-button button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  bottom: 0;
   padding: 1rem;
 }
 .footer a {
-  color: #cdb4db;
+  color: #fff;
   letter-spacing: 1.5px;
 }
 .footer p {
-  color: #cdb4db;
+  color: #fff;
   letter-spacing: 1.5px;
   margin: 0.5rem 0;
 }
