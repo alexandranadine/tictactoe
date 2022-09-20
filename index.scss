@@ -110,6 +110,10 @@ h2 {
     }
   }
 
+  .select {
+    background-color: $lavender-op-med;
+  }
+
   .start-button {
     button {
       display: flex;
@@ -255,12 +259,6 @@ h2 {
   z-index: 998;
 }
 
-
-
-.losing-message {
-  display: none;
-}
-
 .star,
 .moon {
   cursor: not-allowed;
@@ -276,3 +274,5 @@ h2 {
 .moon {
   background-image: url("moon.png");
 }
+
+

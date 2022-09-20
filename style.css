@@ -84,6 +84,9 @@ h2 {
   width: 20px;
   height: 20px;
 }
+.player-buttons .select {
+  background-color: rgba(207, 156, 236, 0.561);
+}
 .player-buttons .start-button button {
   display: flex;
   justify-content: center;
@@ -211,10 +214,6 @@ h2 {
   opacity: 1;
   pointer-events: all;
   z-index: 998;
-}
-
-.losing-message {
-  display: none;
 }
 
 .star,
