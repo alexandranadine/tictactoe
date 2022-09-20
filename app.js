@@ -17,7 +17,7 @@ const restartButton = document.querySelector(".restart");
 const starClass = "star";
 const moonClass = "moon";
 
-let currentPlayer
+let currentPlayer;
 
 let starTurn;
 let moonTurn;
@@ -34,7 +34,6 @@ const winningCombos = [
 ];
 
 function startGame() {
-//   starTurn = false
   gridCells.forEach((cell) => {
     cell.classList.remove(starClass); // Resets the board after restart click
     cell.classList.remove(moonClass);
@@ -66,6 +65,11 @@ function endGame(draw) {
   }
   winningMessageModal.classList.add("show");
   overlay.classList.add("active");
+  p1Star.classList.remove("select");
+  p2Moon.classList.remove("select");
+  p2Star.classList.remove("select");
+  p1Moon.classList.remove("select");
+  playButton.classList.remove("select");
 }
 
 function isDraw() {
@@ -94,30 +98,42 @@ function checkWin(currentClass) {
   });
 }
 
+function choosePlayer() {
+  p1Moon.addEventListener("click", () => {
+    p1Moon.classList.add("select");
+    p2Star.classList.add("select");
+    p1Star.classList.remove("select");
+    p2Moon.classList.remove("select");
+    moonTurn = true;
+    starTurn = false;
+  });
+  p1Star.addEventListener("click", () => {
+    p1Star.classList.add("select");
+    p2Moon.classList.add("select");
+    p1Moon.classList.remove("select");
+    p2Star.classList.remove("select");
+    starTurn = true;
+    moonTurn = false;
+  });
+  p2Moon.addEventListener("click", () => {
+    p2Moon.classList.add("select");
+    p1Star.classList.add("select");
+    p2Star.classList.remove("select");
+    p1Moon.classList.remove("select");
 
-p1Moon.addEventListener("click", () => {
-    p1Moon.classList.add('select')
-    p1Star.classList.remove('select')
-    p2Moon.classList.remove('select')
-    moonTurn = true
-});
-p1Star.addEventListener("click", () => {
-    p1Star.classList.add('select')
-    p1Moon.classList.remove('select')
-    p2Star.classList.remove('select')
-    starTurn = true
-});
+  });
+  p2Star.addEventListener("click", () => {
+    p2Star.classList.add("select");
+    p1Moon.classList.add("select");
+    p2Moon.classList.remove("select");
+    p1Star.classList.remove("select");
 
-p2Moon.addEventListener("click", () => {
-    p2Moon.classList.add('select')
-    p2Star.classList.remove('select')
-    p1Moon.classList.remove('select')
-});
-p2Star.addEventListener("click", () => {
-    p2Star.classList.add('select')
-    p2Moon.classList.remove('select')
-    p1Star.classList.remove('select')
-});
+  });
+}
 
-playButton.addEventListener("click", startGame);
+choosePlayer();
+playButton.addEventListener("click", () => {
+  playButton.classList.add("select");
+  startGame();
+});
 restartButton.addEventListener("click", startGame);

@@ -69,6 +69,9 @@ h2 {
   line-height: 2;
   text-align: center;
 }
+.player-buttons .select {
+  background-color: rgba(207, 156, 236, 0.561);
+}
 .player-buttons button {
   padding: 0.5rem 1rem 0.3rem 1rem;
   margin: 0 0.5rem;
@@ -84,7 +87,7 @@ h2 {
   width: 20px;
   height: 20px;
 }
-.player-buttons .select {
+.player-buttons .start-button .select {
   background-color: rgba(207, 156, 236, 0.561);
 }
 .player-buttons .start-button button {
